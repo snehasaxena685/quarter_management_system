@@ -9,7 +9,7 @@ if(!isset($_SESSION['username'])) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Staff Dashboard | CFTRI Quarter Management</title>
+<title>Staff Dashboard | CFTRI Quarters Management</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -143,7 +143,7 @@ body {
 
 <div class="container">
   <div class="page-header">
-    <h3>Welcome to CFTRI Quarter Management System</h3>
+    <h3>Welcome to CFTRI Quarters Management System</h3>
     <p>Manage your quarters, applications, and reports — all in one place.</p>
   </div>
 
@@ -155,7 +155,7 @@ body {
         <i class="fa-solid fa-house text-primary"></i>
         <h6>View Quarters</h6>
         <p>Check available quarters and details.</p>
-        <a href="quarters_staff.php" target="contentFrame" class="btn btn-outline-primary btn-sm">Open</a>
+        <a href="quarters_staff.php"  class="btn btn-outline-primary btn-sm">Open</a>
       </div>
     </div>
 
@@ -164,8 +164,8 @@ body {
     <div class="col-md-3 col-sm-6">
       <div class="card text-center">
         <i class="fa-solid fa-file-pen text-info"></i>
-        <h6>Apply / Upgrade</h6>
-        <p>Submit new or upgrade your existing quarter application.</p>
+        <h6>Apply / Upgrade/ Vacant</h6>
+        <p>Submit new or upgrade your existing Quarter application.</p>
         <a href="staff_sections/apply_quarter.php" class="btn btn-outline-info btn-sm">Apply</a>
       </div>
     </div>
@@ -184,7 +184,7 @@ body {
 </div>
 
 <div class="footer">
-  <small>© 2025 CSIR-CFTRI | Government of India | Quarter Management Portal</small>
+  <small>© 2025 CSIR-CFTRI | Government of India | Quarters Management Portal</small>
 </div>
 
 </body>

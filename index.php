@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['role'] = $user['role'];
 
         if ($user['role'] == 'admin') {
-            header("Location: aadmin_dashboard.php");
+            header("Location: admins_dashboard.php");
         } elseif ($user['role'] == 'staff') {
             header("Location: staff_dashboard.php");
         } else {
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CFTRI Quarter Management | Login</title>
+  <title>CFTRI Quarters Management | Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -47,21 +47,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       height: 100vh;
       font-family: 'Poppins', sans-serif;
       display: flex;
-      align-items: flex-end; /* shifts box lower */
+      align-items: flex-end;
       justify-content: flex-end;
-      padding-bottom: 6%; /* controls vertical position */
-      background: url('assets/1.jpg') no-repeat center center fixed;
+      padding-bottom: 6%;
+      background: url('assets/Mansion_pic.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
       overflow: hidden;
     }
 
+    /* Make background clearer by reducing white overlay */
     body::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(1.5px);
+      background: rgba(255, 255, 255, 0.1); /* less opacity */
+      backdrop-filter: blur(0.5px); /* light blur */
       z-index: 0;
     }
 
@@ -74,10 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     .login-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 18px;
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(6px);
+      border-radius: 15px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
       padding: 45px 40px;
       text-align: center;
       border: 1px solid rgba(0, 0, 0, 0.05);
@@ -85,7 +86,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     .login-card img {
       width: 85px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      border: 2px solid #ddd;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
 
     .login-card h2 {
@@ -93,6 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       color: #0b2341;
       font-size: 22px;
       margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .form-control {
@@ -101,15 +107,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       padding: 12px 14px;
       font-size: 15px;
       transition: all 0.3s ease;
+      background-color: rgba(255,255,255,0.95);
     }
 
     .form-control:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 10px rgba(37, 99, 235, 0.25);
+      border-color: #1e40af;
+      box-shadow: 0 0 8px rgba(30, 64, 175, 0.2);
     }
 
     .btn-login {
-      background: linear-gradient(135deg, #1e40af, #2563eb);
+      background: #1e3a8a;
       border: none;
       color: #fff;
       width: 100%;
@@ -118,17 +125,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       font-size: 16px;
       font-weight: 500;
       transition: all 0.3s ease;
+      letter-spacing: 0.3px;
     }
 
     .btn-login:hover {
-      background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+      background: #1d4ed8;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 4px 18px rgba(30, 58, 138, 0.25);
     }
 
     .error {
       margin-top: 15px;
-      background: rgba(239,68,68,0.1);
+      background: rgba(239,68,68,0.08);
       border-left: 4px solid #ef4444;
       padding: 10px 12px;
       border-radius: 6px;
@@ -141,6 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       font-size: 13px;
       color: #6b7280;
       margin-top: 25px;
+      opacity: 0.9;
     }
 
     @keyframes fadeIn {
@@ -164,6 +173,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       .login-container {
         margin-right: 0;
         width: 90%;
+      }
+      .login-card {
+        padding: 40px 30px;
       }
     }
   </style>
